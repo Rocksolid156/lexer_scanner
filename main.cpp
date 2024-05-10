@@ -214,7 +214,7 @@ void scan() {
             flag = 2;
             str[point++] = ch;
             ch = fgetc(file_source);
-            while (isLetter(ch) || isInteger(ch)) {
+            while (isLetter(ch) || isInteger(ch) || ch == '\\') {
                 flag = 2;
                 str[point++] = ch;
                 ch = fgetc(file_source);
@@ -239,9 +239,8 @@ void scan() {
                 output << '*';
             else
                 output<<ch;
-            if ((ch== fgetc(file_source))==EOF){
+            if ((ch = fgetc(file_source)) == EOF) {
                 isFinish= true;
-                break;
             }
         }
         if(isMO(ch)){
@@ -264,7 +263,6 @@ void scan() {
         if (ch==' '||ch=='\n'||ch=='\t'){
             if ((ch= fgetc(file_source))==EOF){
                 isFinish= true;
-                break;
             }
             continue;
         }
@@ -284,8 +282,11 @@ void init(){
     }
 }
 
-
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    file_source = fopen(".\\input\\source.txt", "r+");
+    output.open("output.txt");
+    scan();
+    fclose(file_source);
+    output.close();
     return 0;
 }
