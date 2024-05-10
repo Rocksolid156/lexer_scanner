@@ -1,3 +1,0 @@
-C:/Users/kanom/CLionProjects/lexer_scanner/cmake-build-debug/CMakeFiles/lexer_scanner.dir
-C:/Users/kanom/CLionProjects/lexer_scanner/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/kanom/CLionProjects/lexer_scanner/cmake-build-debug/CMakeFiles/rebuild_cache.dir
